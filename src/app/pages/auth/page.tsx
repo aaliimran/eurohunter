@@ -1,11 +1,12 @@
-import GoogleAuthButton from "@/components/buttons/google-auth-button";
 import React from "react";
+import Image from "next/image";
+import GoogleAuthButton from "@/components/buttons/google-auth-button";
 
 const GoogleAuth = () => {
   return (
     <div className="flex justify-center h-screen">
       <div className="flex justify-between min-w-[360px] max-w-[445px] px-0 pt-10 pb-20 flex-col items-center flex-[1_0_0] self-stretch">
-        <img src="/images/euro-hunter-logo.svg" alt="EuroHunter logo" />
+        <Image src="/images/euro-hunter-logo.svg" alt="EuroHunter logo" />
         <div className="flex flex-col justify-center items-center gap-3">
           <h1 className="text-[#000] text-center font-title text-[32px] font-bold leading-[125%] tracking-[0.32px]">
             Welcome to our platform!

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import MainHomeStatusList from "../common/main-home-status-list";
 
 const MainHome = () => {
@@ -36,7 +37,7 @@ const MainHome = () => {
             }
           />
           <div className="flex flex-row justify-center items-start gap-5">
-            <img src="/icons/check.svg" alt="" />
+            <Image src="/icons/check.svg" alt="" />
             <div className="flex flex-col gap-2 pb-4">
               <p className="text-[#000000] text-[16px] font-title font-semibold">
                 Запись в Польское консульство назначена на 18.07.2024
@@ -86,8 +87,9 @@ const MainHome = () => {
                   </div>
                   <div>
                     Ждем вас 14 июля в 16:00 на предвизовую подготовку с полным
-                    пакетом документов и оплатой. В нашем офисе БЦ "Орион 2"
-                    Улица Панфилова 178 седьмой этаж. Лифт справа.
+                    пакетом документов и оплатой. В нашем офисе БЦ
+                    &quot;quoted&quot; Улица Панфилова 178 седьмой этаж. Лифт
+                    справа.
                   </div>
                 </div>
               </h3>

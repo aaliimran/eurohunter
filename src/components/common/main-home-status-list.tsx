@@ -1,12 +1,13 @@
 import React from "react";
+import Image from "next/image";
 
 const MainHomeStatusList: React.FC<any> = ({ title, text, img }) => {
   return (
     <div>
       <div className="flex flex-row gap-5">
         <div className="flex flex-col items-center gap-[6px]">
-          <img src="/icons/check.svg" alt="" />
-          <img src={img} alt="" />
+          <Image src="/icons/check.svg" alt="" />
+          <Image src={img} alt="" />
         </div>
         <div className="flex flex-col gap-2 pb-4">
           <p
