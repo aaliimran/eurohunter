@@ -96,7 +96,7 @@ export default function FormComponent() {
         >
           <div className="space-y-2">
             <label className="block text-[#FFFFFF] text-[18px] font-title font-medium ">
-              Ф.И.О.
+              Название сделки:
             </label>
             <input
               type="text"

@@ -68,7 +68,7 @@ const HeaderAfterAuth = () => {
           &times;
         </button>
         <ul className="mt-16 flex flex-col items-start">
-          <button className="w-full" onClick={handleRouteToHome}>
+          {/* <button className="w-full" onClick={handleRouteToHome}>
             <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
               Главная
             </li>
@@ -77,7 +77,7 @@ const HeaderAfterAuth = () => {
             <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
               Очередь
             </li>
-          </button>
+          </button> */}
           <button className="w-full" onClick={handleRouteToStatusCheck}>
             <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
               Проверка статуса

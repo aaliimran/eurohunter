@@ -22,6 +22,8 @@ export async function POST(req: Request) {
     phoneNumber,
     lastName,
     name,
+    oldSurname,
+    address,
   } = await req.json();
 
   const contactData = {
@@ -37,10 +39,22 @@ export async function POST(req: Request) {
     fields: {
       TITLE: title,
       UF_CRM_6564611D09F13: age,
+      UF_CRM_1726123155140: oldSurname,
+      UF_CRM_1726123661866: address,
       UF_CRM_1714645713271: citizenship,
       UF_CRM_1714729238849: birthCity,
-      UF_CRM_65BC62B4212B0: maritalStatus,
-      UF_CRM_65646A27A61D8: education,
+      UF_CRM_65BC62B4212B0:
+        maritalStatus === "Замужем / Женат"
+          ? "1302"
+          : maritalStatus === "НЕ замужем / НЕ женат"
+          ? "1304"
+          : "2320",
+      UF_CRM_65646A27A61D8:
+        education === "среднее"
+          ? "548"
+          : education === "средне-специальное"
+          ? "550"
+          : "552",
       UF_CRM_1717408121473: height,
       UF_CRM_1726056187256: workExperience,
       UF_CRM_1726055479767: testScore,
