@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import MainHomeStatusList from "../common/main-home-status-list";
 
 const MainHome = () => {
@@ -37,7 +36,7 @@ const MainHome = () => {
             }
           />
           <div className="flex flex-row justify-center items-start gap-5">
-            <Image src="/icons/check.svg" alt="" />
+            <img src="/icons/check.svg" alt="" />
             <div className="flex flex-col gap-2 pb-4">
               <p className="text-[#000000] text-[16px] font-title font-semibold">
                 Запись в Польское консульство назначена на 18.07.2024

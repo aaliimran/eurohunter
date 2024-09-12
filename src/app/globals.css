@@ -33,6 +33,10 @@ body {
   }
 }
 
+/* input:focus {
+  border: 1px solid;
+} */
+
 img {
   user-drag: none; /* старые браузеры */
   user-select: none; /* новые браузеры */

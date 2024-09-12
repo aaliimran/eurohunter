@@ -39,11 +39,6 @@ const Queue = () => {
       <h1 className="text-[#000000] text-[32px] font-title font-bold">
         Очередь
       </h1>
-      {/* <input
-        className="border border-color-#F3F4F6 rounded-xl py-2 px-3 flex justify-center items-center"
-        type="text"
-        placeholder="search"
-      /> */}
       <div className="bg-[#F3F4F6] flex flex-col rounded-3xl p-6 gap-5 w-[865px]">
         <ul className="flex flex-col gap-3">
           {categories.map((category) => (

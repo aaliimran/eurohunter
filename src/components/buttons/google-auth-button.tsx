@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { redirect } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 
@@ -20,7 +19,7 @@ const GoogleAuthButton = () => {
         className="w-full flex p-4 px-5 justify-center items-center gap-2 rounded-lg border border-gray-300 relative "
         onClick={() => signIn("google")}
       >
-        <Image
+        <img
           className="absolute left-4"
           src="/icons/google.svg"
           alt="Google Icon"
