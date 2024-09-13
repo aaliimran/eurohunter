@@ -10,7 +10,7 @@ const GoogleAuthButton = () => {
     return <p>Loading ...</p>;
   }
   if (status === "authenticated") {
-    redirect("/pages/status-check/");
+    redirect("/pages/main");
   }
 
   return (
