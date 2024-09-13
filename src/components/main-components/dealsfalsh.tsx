@@ -51,7 +51,7 @@ const Deals: React.FC = () => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="p-2 sm:p-4 border border-[#223F99] focus:border-[#FFCC05] rounded-xl text-[#223F99] font-title font-semibold text-[14px] sm:text-[16px] w-[80%] md:w-[90%]"
+          className="w-full p-4 border border-gray-300 rounded-xl bg-white text-[#223F99]  font-title font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
           placeholder="ФИО / Номер договора / Номер телефона / ID соискателя"
         />
         <button

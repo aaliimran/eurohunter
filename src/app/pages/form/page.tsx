@@ -128,7 +128,7 @@ export default function FormComponent() {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
               required
             />
           </div>
@@ -142,7 +142,7 @@ export default function FormComponent() {
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -154,7 +154,7 @@ export default function FormComponent() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -166,7 +166,7 @@ export default function FormComponent() {
                 type="text"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -178,7 +178,7 @@ export default function FormComponent() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -190,7 +190,7 @@ export default function FormComponent() {
                 type="text"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -202,7 +202,7 @@ export default function FormComponent() {
                 type="text"
                 value={citizenship}
                 onChange={(e) => setCitizenship(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -217,7 +217,7 @@ export default function FormComponent() {
               type="text"
               value={oldSurname}
               onChange={(e) => setOldSurname(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
             />
           </div>
 
@@ -229,7 +229,7 @@ export default function FormComponent() {
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
               required
             />
           </div>
@@ -242,7 +242,7 @@ export default function FormComponent() {
               type="text"
               value={birthCity}
               onChange={(e) => setBirthCity(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
               required
             />
           </div>
@@ -255,7 +255,7 @@ export default function FormComponent() {
               <select
                 value={maritalStatus}
                 onChange={(e) => setMaritalStatus(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               >
                 <option value="">Выберите...</option>
@@ -272,7 +272,7 @@ export default function FormComponent() {
               <select
                 value={education}
                 onChange={(e) => setEducation(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+                className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
                 required
               >
                 <option value="">Выберите...</option>
@@ -291,7 +291,7 @@ export default function FormComponent() {
               type="text"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
               required
             />
           </div>
@@ -304,7 +304,7 @@ export default function FormComponent() {
               type="text"
               value={workExperience}
               onChange={(e) => setWorkExperience(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
+              className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-700 font-title font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:border-[#223F99] transition duration-150 ease-in-out"
             />
           </div>
 
