@@ -4,8 +4,8 @@ type BitrixResponse<T> = {
   error_description?: string;
 };
 
-type ContactResponse = BitrixResponse<number>; // The result should be the contact ID
-type DealResponse = BitrixResponse<number>; // The result should be the deal ID
+type ContactResponse = BitrixResponse<number>;
+type DealResponse = BitrixResponse<number>;
 
 export async function POST(req: Request) {
   const {
@@ -89,7 +89,6 @@ export async function POST(req: Request) {
 
     const contactId = contactJson.result;
 
-    // Создание сделки и связывание с контактом
     const dealResponse = await fetch(
       "https://eurohunter.bitrix24.kz/rest/107338/f2x762n1o8kkpt1k/crm.deal.add",
       {
@@ -101,7 +100,7 @@ export async function POST(req: Request) {
           ...dealData,
           fields: {
             ...dealData.fields,
-            CONTACT_ID: contactId, // Связываем сделку с контактом
+            CONTACT_ID: contactId,
           },
         }),
       }

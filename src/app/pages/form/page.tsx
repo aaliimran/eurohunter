@@ -40,6 +40,8 @@ export default function FormComponent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!isFormValid || !isTestPassed) return; // Предотвращаем отправку, если форма не валидна или тест не пройден
+
     setIsSubmitted(true);
 
     try {
@@ -70,12 +72,33 @@ export default function FormComponent() {
       const data = await response.json();
 
       if (data.success) {
-        alert("Данные успешно отправлены в Bitrix24!");
+        alert("Данные успешно отправлены");
+
+        // Очистка полей
+        setTitle("");
+        setLastName("");
+        setName("");
+        setPhoneNumber("");
+        setAge("");
+        setEmail("");
+        setOldSurname("");
+        setAddress("");
+        setCitizenship("");
+        setBirthCity("");
+        setMaritalStatus("");
+        setEducation("");
+        setHeight("");
+        setWorkExperience("");
+        setTestScore(null);
+        setIsTestPassed(false);
+        setIsSubmitted(false);
       } else {
         alert(`Ошибка: ${data.error}`);
+        setIsSubmitted(false);
       }
     } catch (error) {
       alert("Ошибка при отправке формы");
+      setIsSubmitted(false);
     }
   };
 

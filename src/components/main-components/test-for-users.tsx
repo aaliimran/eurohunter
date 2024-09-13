@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { testVariants, Test } from "../../utils/testVariants"; // Import from your data file
+import { testVariants, Test } from "../../utils/testVariants";
 
 interface TestsProps {
   onTestComplete: (score: number, totalQuestions: number) => void;
@@ -48,7 +48,7 @@ const Tests: React.FC<TestsProps> = ({ onTestComplete }) => {
     });
     setScore(score);
     setIsTestCompleted(true);
-    onTestComplete(score, selectedTestSet.length); // Pass both score and total questions
+    onTestComplete(score, selectedTestSet.length);
   };
 
   return (
