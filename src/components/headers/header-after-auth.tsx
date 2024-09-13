@@ -6,17 +6,17 @@ const HeaderAfterAuth = () => {
   const route = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleRouteToUserProfile = () => {
-    route.push("/pages/user-profile");
-  };
+  // const handleRouteToUserProfile = () => {
+  //   route.push("/pages/user-profile");
+  // };
 
-  const handleRouteToHome = () => {
-    route.push("/");
-  };
+  // const handleRouteToHome = () => {
+  //   route.push("/");
+  // };
 
-  const handleRouteToQueue = () => {
-    route.push("/#");
-  };
+  // const handleRouteToQueue = () => {
+  //   route.push("/#");
+  // };
 
   const handleRouteToStatusCheck = () => {
     route.push("/pages/status-check");
@@ -35,18 +35,17 @@ const HeaderAfterAuth = () => {
   };
 
   return (
-    <div className="w-full bg-[#223F99] flex justify-between px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-center items-center">
+    <div className="w-full bg-[#223F99] flex justify-end p-3 sm:px-6 lg:px-8">
+      {/* <div className="flex justify-center items-center">
         <button onClick={handleRouteToUserProfile}>
           <img src="/icons/profile.svg" alt="Profile" />
         </button>
-      </div>
+      </div> */}
       <div className="relative flex justify-center items-center">
         <button onClick={toggleMenu}>
           <img src="/icons/burger-menu.svg" alt="Menu" />
         </button>
       </div>
-
       {/* Overlay */}
       {isMenuOpen && (
         <div
