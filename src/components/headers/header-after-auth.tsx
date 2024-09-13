@@ -6,18 +6,6 @@ const HeaderAfterAuth = () => {
   const route = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // const handleRouteToUserProfile = () => {
-  //   route.push("/pages/user-profile");
-  // };
-
-  // const handleRouteToHome = () => {
-  //   route.push("/");
-  // };
-
-  // const handleRouteToQueue = () => {
-  //   route.push("/#");
-  // };
-
   const handleRouteToStatusCheck = () => {
     route.push("/pages/status-check");
   };
@@ -35,17 +23,11 @@ const HeaderAfterAuth = () => {
   };
 
   return (
-    <div className="w-full bg-[#223F99] flex justify-end p-3 sm:px-6 lg:px-8">
-      {/* <div className="flex justify-center items-center">
-        <button onClick={handleRouteToUserProfile}>
-          <img src="/icons/profile.svg" alt="Profile" />
-        </button>
-      </div> */}
-      <div className="relative flex justify-center items-center">
-        <button onClick={toggleMenu}>
-          <img src="/icons/burger-menu.svg" alt="Menu" />
-        </button>
-      </div>
+    <div className="w-full bg-[#223F99] flex justify-end p-3 sm:px-6 lg:px-8 relative">
+      <button onClick={toggleMenu} className="relative z-10">
+        <img src="/icons/burger-menu.svg" alt="Menu" className="w-8 h-8" />
+      </button>
+
       {/* Overlay */}
       {isMenuOpen && (
         <div
@@ -61,32 +43,24 @@ const HeaderAfterAuth = () => {
         }`}
       >
         <button
-          className="absolute top-4 right-4 text-[#FFCC05]"
+          className="absolute top-4 right-4 text-[#FFCC05] text-2xl font-bold"
           onClick={closeMenu}
         >
           &times;
         </button>
         <ul className="mt-16 flex flex-col items-start">
-          {/* <button className="w-full" onClick={handleRouteToHome}>
-            <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
-              Главная
-            </li>
-          </button>
-          <button className="w-full" onClick={handleRouteToQueue}>
-            <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
-              Очередь
-            </li>
-          </button> */}
-          <button className="w-full" onClick={handleRouteToStatusCheck}>
-            <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
-              Проверка статуса
-            </li>
-          </button>
-          <button className="w-full" onClick={handleRouteToForm}>
-            <li className="flex justify-start p-4 hover:bg-[#FFCC05] cursor-pointer transition duration-200 text-[#FFCC05] hover:text-[#223F99] text-[24px] font-title font-bold">
-              Анкета
-            </li>
-          </button>
+          <li
+            className="w-full p-4 text-[#FFCC05] hover:bg-[#FFCC05] hover:text-[#223F99] cursor-pointer transition duration-200 text-xl font-bold"
+            onClick={handleRouteToStatusCheck}
+          >
+            Проверка статуса
+          </li>
+          <li
+            className="w-full p-4 text-[#FFCC05] hover:bg-[#FFCC05] hover:text-[#223F99] cursor-pointer transition duration-200 text-xl font-bold"
+            onClick={handleRouteToForm}
+          >
+            Анкета
+          </li>
         </ul>
       </div>
     </div>
