@@ -52,37 +52,38 @@ const Tests: React.FC<TestsProps> = ({ onTestComplete }) => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col items-center ">
+    <div className="flex justify-center items-center py-4">
+      <div className="w-full">
         {!isTestCompleted ? (
           <>
             <button
               onClick={randomizeTestSet}
               disabled={isTestGenerated}
-              className={`px-8 py-2 text-[#223F99] text-[18px]  font-title font-bold rounded my-4 w-full ${
+              className={`px-8 py-2 text-base md:text-lg font-semibold rounded-md w-full transition-colors duration-200 ease-in-out shadow-sm ${
                 isTestGenerated
-                  ? "bg-gray-400 text-[#FFFFFF]"
-                  : " cursor-pointer transition duration-200 bg-[#FFCC05]"
+                  ? "bg-gray-400 text-white cursor-not-allowed"
+                  : "bg-[#FFCC05] text-[#223F99] hover:bg-[#e6b705] focus:outline-none focus:ring-2 focus:ring-[#223F99] focus:ring-opacity-50"
               }`}
             >
-              пройти тест
+              Пройти тест
             </button>
+
             {selectedTestSet.length > 0 && (
-              <div className="bg-gray-100 p-4 rounded shadow-md w-full max-w-lg">
+              <div className="bg-white p-4 mt-6 rounded-lg shadow-lg">
                 {selectedTestSet.map((test, index) => (
                   <div key={index} className="mb-6">
-                    <p className="text-lg font-semibold mb-4">{`${index + 1}. ${
-                      test.question
-                    }`}</p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <p className="text-lg md:text-xl font-semibold mb-4">
+                      {`${index + 1}. ${test.question}`}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {test.variants.map((variant, variantIndex) => (
                         <button
                           type="button"
                           key={variantIndex}
                           onClick={() => handleAnswerSelection(variant, index)}
-                          className={`px-4 py-2 border rounded shadow hover:bg-gray-200 ${
+                          className={`px-4 py-2 border rounded-lg shadow hover:bg-gray-200 transition-colors duration-200 ${
                             answers[index] === variant
-                              ? "bg-gray-400"
+                              ? "bg-gray-400 text-white"
                               : "bg-white"
                           }`}
                         >
@@ -92,25 +93,23 @@ const Tests: React.FC<TestsProps> = ({ onTestComplete }) => {
                     </div>
                   </div>
                 ))}
-                <div>
-                  <button
-                    type="button"
-                    onClick={calculateScore}
-                    className="px-4 py-2 bg-green-600 text-[#FFFFFF] font-title font-medium rounded hover:bg-green-600 mt-4"
-                  >
-                    получить результаты
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={calculateScore}
+                  className="px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors duration-200 ease-in-out mt-4 w-full"
+                >
+                  Получить результаты
+                </button>
               </div>
             )}
           </>
         ) : (
-          <div className="bg-gray-100 p-4 rounded shadow-md w-full max-w-lg">
+          <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
             <p className="text-xl font-semibold mb-4">
               Ваш результат: {score} / {selectedTestSet.length}
             </p>
-            <p className="text-lg">Правильные ответы:</p>
-            <ul className="list-disc list-inside">
+            <p className="text-lg mb-4">Правильные ответы:</p>
+            <ul className="list-disc list-inside text-base space-y-2">
               {selectedTestSet.map((test, index) => (
                 <li key={index}>
                   {test.question} - Правильный ответ: {test.correctAnswer}

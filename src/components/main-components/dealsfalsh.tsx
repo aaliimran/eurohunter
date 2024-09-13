@@ -45,31 +45,31 @@ const Deals: React.FC = () => {
   };
 
   return (
-    <div>
-      <div className="flex gap-2 mb-4 w-[100%]">
+    <div className="w-full">
+      <div className="flex gap-2 mb-4 w-full max-w-2xl mx-auto">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="p-4 border border-[#223F99] focus:border-[#FFCC05] rounded-xl text-[#223F99] font-title font-semibold w-[90%]"
-          placeholder="ФИО / Номер договора / Номер телефона / ID соискат"
+          className="p-2 sm:p-4 border border-[#223F99] focus:border-[#FFCC05] rounded-xl text-[#223F99] font-title font-semibold text-[14px] sm:text-[16px] w-[80%] md:w-[90%]"
+          placeholder="ФИО / Номер договора / Номер телефона / ID соискателя"
         />
         <button
           onClick={handleSearch}
-          className="px-5 py-0 bg-[#223F99] text-[#FFFFFF] text-[16px] font-title font-bold rounded-xl"
+          className="px-4 py-2 bg-[#223F99] text-[#FFFFFF] text-[14px] sm:text-[16px] font-title font-bold rounded-xl"
         >
-          поиск
+          Поиск
         </button>
       </div>
 
-      <div className="flex flex-col p-6 gap-518px w-[865px]">
-        <ul className="flex flex-col gap-3">
-          {selectedData ? (
+      <div className="flex flex-col p-4 md:p-6 gap-4 w-full max-w-2xl mx-auto">
+        {selectedData ? (
+          <ul className="flex flex-col gap-3">
             <li
-              className="text-[20px] font-title flex flex-col gap-3"
+              className="text-[18px] md:text-[20px] font-title flex flex-col gap-3"
               key={selectedData.ID}
             >
-              <p className="text-[#000000] text-[24px] font-title font-bold">
+              <p className="text-[#000000] text-[20px] md:text-[24px] font-title font-bold">
                 {selectedData["Название сделки"]}
               </p>
               <div>
@@ -82,8 +82,8 @@ const Deals: React.FC = () => {
                 <p>Дата начала: {selectedData["Дата начала"]}</p>
               </div>
             </li>
-          ) : null}
-        </ul>
+          </ul>
+        ) : null}
       </div>
     </div>
   );
