@@ -6,8 +6,8 @@ import AuthGoogleProvider from "@/components/providers/google-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "eurohunter-queue",
-  description: "Empowered by EuroHunter, Watch yourself in queue",
+  title: "Статусы и анкеты",
+  description: "смотри свой статус и заполняй анкету",
 };
 
 export default function RootLayout({
