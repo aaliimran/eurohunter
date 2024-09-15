@@ -13,8 +13,10 @@ interface Deal {
 const Deals: React.FC = () => {
   const [selectedData, setSelectedData] = useState<Deal | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
+    setLoading(true);
     if (searchTerm.trim() === "") {
       setSelectedData(null);
       return;
@@ -42,6 +44,12 @@ const Deals: React.FC = () => {
     } catch (error) {
       console.error("Ошибка при загрузке данных:", error);
     }
+    setLoading(false);
+  };
+
+  // Функция для маскировки телефона
+  const maskPhone = (phone: string) => {
+    return phone.replace(/(\d{4})\d{6}/, "$1******");
   };
 
   return (
@@ -58,7 +66,7 @@ const Deals: React.FC = () => {
           onClick={handleSearch}
           className="px-4 py-2 bg-[#223F99] text-[#FFFFFF] text-[14px] sm:text-[16px] font-title font-bold rounded-xl"
         >
-          Поиск
+          {loading ? "Поиск..." : "Поиск"}
         </button>
       </div>
 
@@ -75,7 +83,7 @@ const Deals: React.FC = () => {
               <div>
                 <p>
                   Контакты соискателя:{" "}
-                  {selectedData["Контакт: Рабочий телефон"]}
+                  {maskPhone(selectedData["Контакт: Рабочий телефон"])}
                 </p>
                 <p>Статус соискателя: {selectedData["Стадия сделки"]}</p>
                 <p>Номер договора: {selectedData["Номер договора"]}</p>
