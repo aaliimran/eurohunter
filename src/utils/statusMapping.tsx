@@ -55,16 +55,16 @@ export const transferMapping: { [key: string]: string } = {
 
 export const mapStatus = (
   status: string,
-  section: "SAS Logistic" | "Посольства SAS" | "eurokadra" | "transfer"
+  section: "SAS Logistic" | "Посольства SAS" | "Eurokadra" | "Transfer"
 ): string => {
   switch (section) {
     case "SAS Logistic":
       return sasLogisticsMapping[status] || status;
     case "Посольства SAS":
       return consulateMapping[status] || status;
-    case "eurokadra":
+    case "Eurokadra":
       return eurokadraMapping[status] || status;
-    case "transfer":
+    case "Transfer":
       return transferMapping[status] || status;
     default:
       return status;
