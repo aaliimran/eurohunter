@@ -74,7 +74,6 @@ export default function FormComponent() {
       if (data.success) {
         alert("Данные успешно отправлены");
 
-        // Reset form
         setTitle("");
         setLastName("");
         setName("");
@@ -102,8 +101,30 @@ export default function FormComponent() {
     }
   };
 
-  const handleTestCompletion = (score: number, totalQuestions: number) => {
-    setTestScore(`${score}/${totalQuestions}`);
+  const handleTestCompletion = (
+    score: number,
+    totalQuestions: number,
+    correctAnswers: {
+      question: string;
+      correctAnswer: string;
+      userAnswer: string | null;
+    }[]
+  ) => {
+    const result = `
+    Ваш результат: ${score} / ${totalQuestions}\n
+    Правильные ответы:\n
+    ${correctAnswers
+      .map(
+        (answer, index) => `
+      ${index + 1}. ${answer.question}\n
+      Ваш ответ: ${answer.userAnswer || "Не отвечен"}\n
+      Правильный ответ: ${answer.correctAnswer}\n
+    `
+      )
+      .join("\n")}
+  `;
+
+    setTestScore(result);
     setIsTestPassed(true);
   };
 
