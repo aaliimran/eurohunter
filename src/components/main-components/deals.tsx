@@ -9,7 +9,12 @@ interface Deal {
   "Стадия сделки": string;
   "Номер договора": string;
   ID: number;
-  Воронка: "SAS Logistic" | "Посольства SAS" | "Eurokadra" | "Transfer";
+  Воронка:
+    | "SAS Logistic"
+    | "Посольства SAS"
+    | "Eurokadra"
+    | "Посольства EuroKadra"
+    | "Transfer";
 }
 
 const Deals: React.FC = () => {
@@ -68,10 +73,11 @@ const Deals: React.FC = () => {
     setLoading(false);
   };
 
-  const maskPhone = (phone: string | undefined, p0: string[]) => {
+  const maskContactName = (phone: string | undefined) => {
     if (!phone) {
       return "";
     }
+
     const cleanedPhone = phone.replace(/\D/g, "");
 
     if (cleanedPhone.length > 4) {
@@ -79,7 +85,15 @@ const Deals: React.FC = () => {
       const maskedPart = "*".repeat(cleanedPhone.length - 4);
       return `${prefix}${maskedPart}`;
     }
+
     return cleanedPhone;
+  };
+
+  const maskPhone = (phone: string | undefined) => {
+    if (phone === undefined) {
+      return "";
+    }
+    return phone.replace(/(\d{4})\d{6}/, "$1******");
   };
 
   return (
@@ -108,15 +122,14 @@ const Deals: React.FC = () => {
               key={selectedData.ID}
             >
               <p className="text-[#000000] text-[20px] md:text-[24px] font-title font-bold">
-                {selectedData["Название сделки"]}
+                {selectedData["Название сделки"]}{" "}
+                {maskContactName(selectedData["Контакт"])}
               </p>
               <div>
                 <p>Номер договора: {selectedData["Номер договора"]}</p>
                 <p>
                   Контакты соискателя:{" "}
-                  {maskPhone(selectedData["Контакт"], [
-                    "Контакт: Рабочий телефон",
-                  ])}
+                  {maskPhone(selectedData["Контакт: Рабочий телефон"])}
                 </p>
                 <p className="flex gap-3">
                   <span className="font-title font-bold text-[20px]  ">

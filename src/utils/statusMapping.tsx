@@ -42,7 +42,7 @@ export const eurokadraMapping: { [key: string]: string } = {
   "ВСЕ ОСТАЛЬНОЕ": "Подготовка документов для работодателя",
 };
 
-export const transferMapping: { [key: string]: string } = {
+export const eurokadraConsulateMapping: { [key: string]: string } = {
   Новые: "Собеседование",
   "прошли успешно собеседование": "Собеседование успешно пройдено",
   "получили разрешение на работу": "Получено разрешение на работу",
@@ -53,9 +53,32 @@ export const transferMapping: { [key: string]: string } = {
   "Отказ от услуг": "Отказ от услуг",
 };
 
+export const transferMapping: { [key: string]: string } = {
+  Новые: "В очереди на запись в консульство",
+  "нет справки и недозвон":
+    "Не хватает справки для консульства, не можем дозвониться",
+  "Заполнена 1 анкета": "В очереди на запись в консульство",
+  "Заполнена 2 анкета": "В очереди на запись в консульство",
+  "не можем записать на жеребьевку": "В очереди на запись в консульство",
+  Перезапись: "В очереди на перезапись в консульство",
+  "Есть дата": "Запись в консульство назначена",
+  "Предвизовая подготовка": "Предвизовая подготовка",
+  "Зашли в посольство": "Ожидание одобрения визы",
+  "Получил визу": "Виза одобрена",
+  "Получил отказ в визе": "Получил отказ в визе",
+  "предвылетная подготовка": "Предвылетная подготовка",
+  "Отказ от услуг": "Отказ от услуг",
+  "ВСЕ ОСТАЛЬНОЕ": "Подготовка документов для работодателя",
+};
+
 export const mapStatus = (
   status: string,
-  section: "SAS Logistic" | "Посольства SAS" | "Eurokadra" | "Transfer"
+  section:
+    | "SAS Logistic"
+    | "Посольства SAS"
+    | "Eurokadra"
+    | "Посольства EuroKadra"
+    | "Transfer"
 ): string => {
   switch (section) {
     case "SAS Logistic":
@@ -63,6 +86,8 @@ export const mapStatus = (
     case "Посольства SAS":
       return consulateMapping[status] || status;
     case "Eurokadra":
+      return eurokadraMapping[status] || status;
+    case "Посольства EuroKadra":
       return eurokadraMapping[status] || status;
     case "Transfer":
       return transferMapping[status] || status;
