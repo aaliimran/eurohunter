@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
-    "next": "14.2.5",
+    "next": ">=14.2.10",
     "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "next": ">=14.2.10",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
