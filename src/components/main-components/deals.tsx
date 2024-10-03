@@ -128,8 +128,11 @@ const Deals: React.FC = () => {
               <div>
                 <p>Номер договора: {selectedData["Номер договора"]}</p>
                 <p>
-                  Контакты соискателя:{" "}
-                  {maskPhone(selectedData["Контакт: Рабочий телефон"])}
+                  Контакты соискателя:
+                  {selectedData["Контакт: Рабочий телефон"]
+                    .split(", ")
+                    .map((phone) => maskPhone(phone))
+                    .join(", ")}
                 </p>
                 <p className="flex gap-3">
                   <span className="font-title font-bold text-[20px]  ">
